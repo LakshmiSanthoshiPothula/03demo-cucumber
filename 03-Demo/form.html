@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+
+<script type="text/javascript">
+
+function chkEmpty(){
+	var mob = /^[7-9]{1}[0-9]{9}$/;
+	var email=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+  
+	if (document.frmReg.name.value == "") {alert("Please fill the Name");}
+	else if (document.frmReg.email.value == ""){alert("Please fill the Email");}
+	else if (email.test(document.frmReg.email.value) == false) { alert("Please enter valid Email Id.");}
+	else if (document.frmReg.Phone.value == "") {alert("Please fill the Mobile No.");}
+	else if (mob.test(document.frmReg.Phone.value) == false) { alert("Please enter valid Contact no.");}
+	else if (document.frmReg.add.value == "") {alert("Please fill the Address");}
+		else{
+	//alert("Hotel Booking completed Successfully.");
+	window.location="success.html";
+		}
+	}
+
+
+
+</script>
+</head>
+<body>
+
+<form name="frmReg">
+<table border=1>
+  
+          <tr>
+                <td align="left">Name*: </td>
+                <td><input type="text"  id ="name" name="txtName" /></td>
+            </tr>
+		
+			    <tr>
+                <td align="left">Email*:</td>
+                <td><input type="text" id ="email" name="txtEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/></td>
+            </tr>
+            	
+			<tr>
+                <td align="left">Mobile no.*:</td>
+                <td><input type="text" id="Phone" name="txtPhone"   pattern="[789][0-9]{9}"/></td>
+            </tr>
+            <tr>
+			<td align="left">Gender:</td>
+          
+       <td><input type = 'radio' name = 'Gender'  id="male"  checked > MALE
+          <input type = 'radio' name = 'Gender' id="female" > FEMALE
+           </td>
+			<tr>
+                <td align="left">Address:</td>
+                <td>
+                	<textarea id="add"rows="5" cols="20"></textarea>
+                </td>
+			</tr>
+				          
+			<tr>
+                <td colspan=2 > <br> 
+				<input type="button" id ="btn" class="btn" value = "submit" onclick=chkEmpty()/>
+				</td>
+				</tr>
+				
+
+
+</table>
+</form>
+
+</body>
+</html>
